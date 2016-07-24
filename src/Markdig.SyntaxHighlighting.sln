@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Markdig.SyntaxHighlighting.Tests", "Markdig.SyntaxHighlighting.Tests\Markdig.SyntaxHighlighting.Tests.csproj", "{B0696B7B-33C0-49B3-B8B2-DE07A7FCFBE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Markdig.SyntaxHighlighting", "Markdig.SyntaxHighlighting\Markdig.SyntaxHighlighting.csproj", "{5D1E4E89-83A2-4B14-BB11-DEB3C69665F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0696B7B-33C0-49B3-B8B2-DE07A7FCFBE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0696B7B-33C0-49B3-B8B2-DE07A7FCFBE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0696B7B-33C0-49B3-B8B2-DE07A7FCFBE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0696B7B-33C0-49B3-B8B2-DE07A7FCFBE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D1E4E89-83A2-4B14-BB11-DEB3C69665F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D1E4E89-83A2-4B14-BB11-DEB3C69665F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D1E4E89-83A2-4B14-BB11-DEB3C69665F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D1E4E89-83A2-4B14-BB11-DEB3C69665F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
