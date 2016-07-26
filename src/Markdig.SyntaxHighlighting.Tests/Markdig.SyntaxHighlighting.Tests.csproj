@@ -64,6 +64,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Markdig.SyntaxHighlighting\Markdig.SyntaxHighlighting.csproj">
+      <Project>{5d1e4e89-83a2-4b14-bb11-deb3c69665f0}</Project>
+      <Name>Markdig.SyntaxHighlighting</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
