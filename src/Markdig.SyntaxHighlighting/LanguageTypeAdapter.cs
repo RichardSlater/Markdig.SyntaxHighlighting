@@ -3,7 +3,8 @@
 namespace Markdig.SyntaxHighlighting {
     public class LanguageTypeAdapter {
         public ILanguage Parse(string id) {
-            return Languages.CSharp;
+            var byIdCanidate = Languages.FindById(id);
+            return byIdCanidate ?? Languages.CSharp;
         }
     }
 }
