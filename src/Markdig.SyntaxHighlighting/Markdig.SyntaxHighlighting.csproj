@@ -39,10 +39,16 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="SyntaxHighlightingCodeBlockRenderer.cs" />
+    <Compile Include="SyntaxHighlightingExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ColorCode, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ColorCode.Portable.1.0.3\lib\portable45-net45+win8+wp8+wpa81\ColorCode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Markdig, Version=0.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Markdig.0.7.3\lib\portable40-net40+sl5+win8+wp8+wpa81\Markdig.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
