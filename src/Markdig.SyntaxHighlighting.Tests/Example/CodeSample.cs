@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
-namespace Markdig.SyntaxHighlighting.Tests.Example
-{
-    public class CodeSample
-    {
+namespace Markdig.SyntaxHighlighting.Tests.Example {
+    public class CodeSample {
         [Fact]
         public void CodeSampleWorks() {
             var codebase = Assembly.GetExecutingAssembly().GetName().CodeBase;

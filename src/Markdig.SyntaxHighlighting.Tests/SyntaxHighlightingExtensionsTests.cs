@@ -6,28 +6,31 @@ using Xunit;
 
 namespace Markdig.SyntaxHighlighting.Tests {
     public class SyntaxHighlightingExtensionsTests {
-        [Fact]
-        public void ThrowsIfRendererIsNull() {
-            var extension = new SyntaxHighlightingExtension();
-            var extensionSetup = new Action(() => extension.Setup((IMarkdownRenderer) null));
-            Assert.Throws<ArgumentNullException>(extensionSetup);
+        private class FakeRenderer : TextRendererBase<FakeRenderer> {
+            public FakeRenderer(TextWriter writer) : base(writer) {}
         }
 
         [Fact]
-        public void DoesntThrowWhenSetupPipeline()
-        {
-            var extension = new SyntaxHighlightingExtension();
-            extension.Setup(new MarkdownPipelineBuilder());
-        }
-
-        [Fact]
-        public void PipelineIntactIfNotHtmlRenderer() {
+        public void CodeBlockRendererReplaced() {
             var extension = new SyntaxHighlightingExtension();
             var writer = new StringWriter();
-            var markdownRenderer = new FakeRenderer(writer);
+            var markdownRenderer = new HtmlRenderer(writer);
             var oldRendererCount = markdownRenderer.ObjectRenderers.Count;
+            Assert.Equal(1,
+                markdownRenderer.ObjectRenderers.FindAll(x => x.GetType() == typeof(CodeBlockRenderer)).Count);
             extension.Setup(markdownRenderer);
+            Assert.Equal(0,
+                markdownRenderer.ObjectRenderers.FindAll(x => x.GetType() == typeof(CodeBlockRenderer)).Count);
+            Assert.Equal(1,
+                markdownRenderer.ObjectRenderers.FindAll(x => x.GetType() == typeof(SyntaxHighlightingCodeBlockRenderer))
+                    .Count);
             Assert.Equal(oldRendererCount, markdownRenderer.ObjectRenderers.Count);
+        }
+
+        [Fact]
+        public void DoesntThrowWhenSetupPipeline() {
+            var extension = new SyntaxHighlightingExtension();
+            extension.Setup(new MarkdownPipelineBuilder());
         }
 
         [Fact]
@@ -53,21 +56,20 @@ namespace Markdig.SyntaxHighlighting.Tests {
         }
 
         [Fact]
-        public void CodeBlockRendererReplaced() {
+        public void PipelineIntactIfNotHtmlRenderer() {
             var extension = new SyntaxHighlightingExtension();
             var writer = new StringWriter();
-            var markdownRenderer = new HtmlRenderer(writer);
+            var markdownRenderer = new FakeRenderer(writer);
             var oldRendererCount = markdownRenderer.ObjectRenderers.Count;
-            Assert.Equal(1, markdownRenderer.ObjectRenderers.FindAll(x => x.GetType() == typeof(CodeBlockRenderer)).Count);
             extension.Setup(markdownRenderer);
-            Assert.Equal(0, markdownRenderer.ObjectRenderers.FindAll(x => x.GetType() == typeof(CodeBlockRenderer)).Count);
-            Assert.Equal(1, markdownRenderer.ObjectRenderers.FindAll(x => x.GetType() == typeof(SyntaxHighlightingCodeBlockRenderer)).Count);
             Assert.Equal(oldRendererCount, markdownRenderer.ObjectRenderers.Count);
         }
 
-        private class FakeRenderer : TextRendererBase<FakeRenderer> {
-            public FakeRenderer(TextWriter writer) : base(writer) {}
+        [Fact]
+        public void ThrowsIfRendererIsNull() {
+            var extension = new SyntaxHighlightingExtension();
+            var extensionSetup = new Action(() => extension.Setup((IMarkdownRenderer) null));
+            Assert.Throws<ArgumentNullException>(extensionSetup);
         }
-
     }
 }

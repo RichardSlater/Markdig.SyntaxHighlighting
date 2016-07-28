@@ -4,9 +4,9 @@ using ColorCode;
 
 namespace Markdig.SyntaxHighlighting {
     public class LanguageTypeAdapter {
-        private Dictionary<string, ILanguage> languageMap = new Dictionary<string, ILanguage> {
-            { "csharp", Languages.CSharp },
-            { "cplusplus", Languages.Cpp }
+        private readonly Dictionary<string, ILanguage> languageMap = new Dictionary<string, ILanguage> {
+            {"csharp", Languages.CSharp},
+            {"cplusplus", Languages.Cpp}
         };
 
         public ILanguage Parse(string id, string firstLine = null) {
