@@ -13,7 +13,8 @@ namespace Markdig.SyntaxHighlighting {
 
         protected override void Write(HtmlRenderer renderer, CodeBlock obj) {
             var fencedCodeBlock = obj as FencedCodeBlock;
-            if (fencedCodeBlock == null)
+            var parser = obj.Parser as FencedCodeBlockParser;
+            if (fencedCodeBlock == null || parser == null)
             {
                 _underlyingRenderer.Write(renderer, obj);
                 return;
@@ -21,6 +22,9 @@ namespace Markdig.SyntaxHighlighting {
 
             var attributes = obj.TryGetAttributes() ?? new HtmlAttributes();
             attributes.AddClass("editor-colors");
+
+            var languageClass = fencedCodeBlock.Info.Replace(parser.InfoPrefix, "lang-");
+            attributes.AddClass(languageClass);
 
             renderer
                 .Write("<div")

@@ -38,9 +38,23 @@ namespace Markdig.SyntaxHighlighting.Tests {
             var renderer = new SyntaxHighlightingCodeBlockRenderer(underlyingRendererMock.Object);
             var builder = new StringBuilder();
             var markdownRenderer = new HtmlRenderer(new StringWriter(builder));
-            var codeBlock = new FencedCodeBlock(new FencedCodeBlockParser());
+            var codeBlock = new FencedCodeBlock(new FencedCodeBlockParser()) { Info = "language-csharp" };
             renderer.Write(markdownRenderer, codeBlock);
-            Assert.Contains("class=\"editor-colors\"", builder.ToString());
+            Assert.Contains("editor-colors", builder.ToString());
+        }
+
+        [Fact]
+        public void LangCssClassAdded()
+        {
+            var underlyingRendererMock = new Mock<CodeBlockRenderer>();
+            underlyingRendererMock
+                .Setup(x => x.Write(It.IsAny<HtmlRenderer>(), It.IsAny<CodeBlock>()));
+            var renderer = new SyntaxHighlightingCodeBlockRenderer(underlyingRendererMock.Object);
+            var builder = new StringBuilder();
+            var markdownRenderer = new HtmlRenderer(new StringWriter(builder));
+            var codeBlock = new FencedCodeBlock(new FencedCodeBlockParser()) {Info = "language-csharp"};
+            renderer.Write(markdownRenderer, codeBlock);
+            Assert.Contains("lang-csharp", builder.ToString());
         }
 
         [Fact]
@@ -52,7 +66,7 @@ namespace Markdig.SyntaxHighlighting.Tests {
             var renderer = new SyntaxHighlightingCodeBlockRenderer(underlyingRendererMock.Object);
             var builder = new StringBuilder();
             var markdownRenderer = new HtmlRenderer(new StringWriter(builder));
-            var codeBlock = new FencedCodeBlock(new FencedCodeBlockParser());
+            var codeBlock = new FencedCodeBlock(new FencedCodeBlockParser()) { Info = "language-csharp" };
             renderer.Write(markdownRenderer, codeBlock);
             Assert.Contains("<div", builder.ToString());
             Assert.Contains("</div>", builder.ToString());
