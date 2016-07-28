@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/RichardSlater/Markdig.SyntaxHighlighting/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/RichardSlater/Markdig.SyntaxHighlighting/</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/RichardSlater/Markdig.SyntaxHighlighting/56be978d313c4199396ca1ac0b1407d2c1cb7dfa/assets/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Syntax Highlighting for Markdig.</description>
+    <releaseNotes>Initial Version.</releaseNotes>
+    <copyright>Copyright 2016 Richard Slater</copyright>
+    <tags>markdown code syntax highlighting</tags>
+  </metadata>
+</package>
