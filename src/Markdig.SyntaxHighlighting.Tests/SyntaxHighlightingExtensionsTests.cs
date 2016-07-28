@@ -5,7 +5,7 @@ using Markdig.Renderers.Html;
 using Xunit;
 
 namespace Markdig.SyntaxHighlighting.Tests {
-    public class MarkdownExtensionsTests {
+    public class SyntaxHighlightingExtensionsTests {
         [Fact]
         public void ThrowsIfRendererIsNull() {
             var extension = new SyntaxHighlightingExtension();
@@ -38,6 +38,18 @@ namespace Markdig.SyntaxHighlighting.Tests {
             markdownRenderer.ObjectRenderers.RemoveAll(x => true);
             extension.Setup(markdownRenderer);
             Assert.Equal(1, markdownRenderer.ObjectRenderers.Count);
+        }
+
+        [Fact]
+        public void PipelineChangedIfHtmlRendererUsingExtensionMethod() {
+            var pipelineBuilder = new MarkdownPipelineBuilder();
+            pipelineBuilder.UseSyntaxHighlighting();
+            var pipeline = pipelineBuilder.Build();
+            var writer = new StringWriter();
+            var markdownRenderer = new HtmlRenderer(writer);
+            pipeline.Setup(markdownRenderer);
+            var renderer = markdownRenderer.ObjectRenderers.FindExact<SyntaxHighlightingCodeBlockRenderer>();
+            Assert.NotNull(renderer);
         }
 
         [Fact]

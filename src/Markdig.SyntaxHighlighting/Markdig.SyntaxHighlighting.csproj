@@ -41,6 +41,7 @@
     </Compile>
     <Compile Include="SyntaxHighlightingCodeBlockRenderer.cs" />
     <Compile Include="SyntaxHighlightingExtension.cs" />
+    <Compile Include="SyntaxHighlightingExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ColorCode, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">

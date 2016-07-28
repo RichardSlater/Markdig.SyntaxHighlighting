@@ -4,7 +4,7 @@ using Markdig.Renderers.Html;
 
 namespace Markdig.SyntaxHighlighting {
     public class SyntaxHighlightingExtension : IMarkdownExtension {
-        public void Setup(MarkdownPipelineBuilder pipeline) { }
+        public void Setup(MarkdownPipelineBuilder pipeline) {}
 
         public void Setup(IMarkdownRenderer renderer) {
             if (renderer == null) {
@@ -17,12 +17,12 @@ namespace Markdig.SyntaxHighlighting {
             }
 
             var originalCodeBlockRenderer = htmlRenderer.ObjectRenderers.FindExact<CodeBlockRenderer>();
-            if (originalCodeBlockRenderer != null)
-            {
+            if (originalCodeBlockRenderer != null) {
                 htmlRenderer.ObjectRenderers.Remove(originalCodeBlockRenderer);
             }
 
-            htmlRenderer.ObjectRenderers.AddIfNotAlready(new SyntaxHighlightingCodeBlockRenderer(originalCodeBlockRenderer));
+            htmlRenderer.ObjectRenderers.AddIfNotAlready(
+                new SyntaxHighlightingCodeBlockRenderer(originalCodeBlockRenderer));
         }
     }
 }
