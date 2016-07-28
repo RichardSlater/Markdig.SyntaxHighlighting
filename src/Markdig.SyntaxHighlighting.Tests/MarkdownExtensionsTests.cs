@@ -13,6 +13,7 @@ namespace Markdig.SyntaxHighlighting.Tests {
             Assert.Throws<ArgumentNullException>(extensionSetup);
         }
 
+        [Fact]
         public void DoesntThrowWhenSetupPipeline()
         {
             var extension = new SyntaxHighlightingExtension();
