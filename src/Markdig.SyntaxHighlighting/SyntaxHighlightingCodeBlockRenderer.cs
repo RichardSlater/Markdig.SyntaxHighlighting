@@ -23,10 +23,12 @@ namespace Markdig.SyntaxHighlighting {
             }
 
             var attributes = obj.TryGetAttributes() ?? new HtmlAttributes();
-            attributes.AddClass("editor-colors");
 
             var languageMoniker = fencedCodeBlock.Info.Replace(parser.InfoPrefix, string.Empty);
             attributes.AddClass($"lang-{languageMoniker}");
+            attributes.Classes.Remove($"language-{languageMoniker}");
+
+            attributes.AddClass("editor-colors");
 
             string firstLine;
             var code = GetCode(obj, out firstLine);

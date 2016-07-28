@@ -71,6 +71,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Example\CodeSample.cs" />
     <Compile Include="LanguageTypeAdapterTests.cs" />
     <Compile Include="SyntaxHighlightingExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +81,9 @@
     <Compile Include="SyntaxHighlightingCodeBlockRendererTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Example\README.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +91,17 @@
       <Project>{5d1e4e89-83a2-4b14-bb11-deb3c69665f0}</Project>
       <Name>Markdig.SyntaxHighlighting</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Example\gfm.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Example\expected.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Example\_template.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
