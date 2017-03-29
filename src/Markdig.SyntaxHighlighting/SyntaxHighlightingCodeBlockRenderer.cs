@@ -25,6 +25,11 @@ namespace Markdig.SyntaxHighlighting {
             var attributes = obj.TryGetAttributes() ?? new HtmlAttributes();
 
             var languageMoniker = fencedCodeBlock.Info.Replace(parser.InfoPrefix, string.Empty);
+            if (string.IsNullOrEmpty(languageMoniker)) {
+                _underlyingRenderer.Write(renderer, obj);
+                return;
+            }
+
             attributes.AddClass($"lang-{languageMoniker}");
             attributes.Classes.Remove($"language-{languageMoniker}");
 
