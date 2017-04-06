@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Example\CodeSample.cs" />
+    <Compile Include="IntegrationTests.cs" />
     <Compile Include="LanguageTypeAdapterTests.cs" />
     <Compile Include="SyntaxHighlightingExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
