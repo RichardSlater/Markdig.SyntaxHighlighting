@@ -14,9 +14,9 @@ namespace Markdig.SyntaxHighlighting.Tests {
 var desktop = Environment.SpecialFolder.DesktopDirectory;
 ```";
 
-        private static FencedCodeBlock GetFencedCodeBlock() {
+        private static FencedCodeBlock GetFencedCodeBlock(string language = "language-csharp") {
             return new FencedCodeBlock(new FencedCodeBlockParser()) {
-                Info = "language-csharp",
+                Info = language,
                 Lines = new StringLineGroup(3) {
                     new StringSlice("```csharp"),
                     new StringSlice("var desktop = Environment.SpecialFolder.DesktopDirectory;"),
@@ -40,6 +40,21 @@ var desktop = Environment.SpecialFolder.DesktopDirectory;
             var builder = new StringBuilder();
             var markdownRenderer = new HtmlRenderer(new StringWriter(builder));
             var codeBlock = GetFencedCodeBlock();
+            renderer.Write(markdownRenderer, codeBlock);
+            Assert.Contains("<div", builder.ToString());
+            Assert.Contains("</div>", builder.ToString());
+        }
+
+        [Fact]
+        public void DivWrittenUnrecognisedLanguage()
+        {
+            var underlyingRendererMock = new Mock<CodeBlockRenderer>();
+            underlyingRendererMock
+                .Setup(x => x.Write(It.IsAny<HtmlRenderer>(), It.IsAny<CodeBlock>()));
+            var renderer = new SyntaxHighlightingCodeBlockRenderer(underlyingRendererMock.Object);
+            var builder = new StringBuilder();
+            var markdownRenderer = new HtmlRenderer(new StringWriter(builder));
+            var codeBlock = GetFencedCodeBlock("language-made-up-language"); //
             renderer.Write(markdownRenderer, codeBlock);
             Assert.Contains("<div", builder.ToString());
             Assert.Contains("</div>", builder.ToString());
