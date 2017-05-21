@@ -3,6 +3,8 @@
 [![GitHub stars](https://img.shields.io/github/stars/RichardSlater/Markdig.SyntaxHighlighting.svg?style=flat-square)](https://github.com/RichardSlater/Markdig.SyntaxHighlighting/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg?style=flat-square)](https://raw.githubusercontent.com/RichardSlater/Markdig.SyntaxHighlighting/master/LICENSE.md)
 [![AppVeyor](https://img.shields.io/appveyor/ci/richard-slater/markdig-syntaxhighlighting.svg?style=flat-square)](https://ci.appveyor.com/project/richard-slater/markdig-syntaxhighlighting)
+[![NuGet](https://img.shields.io/nuget/dt/Markdig.SyntaxHighlighting.svg?style=flat-square)](https://www.nuget.org/packages/Markdig.SyntaxHighlighting/)
+[![NuGet](https://img.shields.io/nuget/v/Markdig.SyntaxHighlighting.svg?style=flat-square)](https://www.nuget.org/packages/Markdig.SyntaxHighlighting/)
 
 # Syntax Highlighting extension for Markdig
 
@@ -48,6 +50,8 @@ var pipeline = new MarkdownPipelineBuilder()
 
 *   [ ] Upgrade ColorCode to support .NET Core / .NET Standard.
 *   [ ] Upgrade Markdig.SyntaxHighlighting to support .NET Core / .NET Standard.
+*   [ ] Add support for Code Coverage
+*   [ ] Add support for Dependency Checking
 
 
   [markdig]: https://github.com/lunet-io/markdig

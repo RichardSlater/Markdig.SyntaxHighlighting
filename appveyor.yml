@@ -39,6 +39,14 @@
     publish_nuget: true
     publish_nuget_symbols: true
 
+  skip_commits:
+    files:
+      - README.md
+      - LICENSE.md
+      - LICENSE.txt
+      - 'assets/**'
+      - 'scripts/**'
+
 -
   version: 1.0.{build}-{branch}
 
