@@ -28,9 +28,9 @@
     - nuget restore src\Markdig.SyntaxHighlighting.sln
 
   cache:
-    - packages -> **\packages.config  # preserve "packages" directory
-    - '%LocalAppData%\NuGet\Cache'    # NuGet < v3
-    - '%LocalAppData%\NuGet\v3-cache' # NuGet v3
+    - src\packages -> **\packages.config  # preserve "packages" directory
+    - '%LocalAppData%\NuGet\Cache'        # NuGet < v3
+    - '%LocalAppData%\NuGet\v3-cache'     # NuGet v3
 
   build:
     # enable MSBuild parallel builds
