@@ -26,6 +26,7 @@ namespace Markdig.SyntaxHighlighting.Tests.Example {
             var actualHtml = File.ReadAllText(Path.Combine(folder, "_template.html"))
                 .Replace("{{{this}}}", html);
             actualHtml = actualHtml.Replace("\r\n", "\n").Replace("\n", "\r\n");
+            expectedHtml = expectedHtml.Replace("\r\n", "\n").Replace("\n", "\r\n");
             File.WriteAllText(Path.Combine(folder, "actual.html"), actualHtml);
             Assert.Equal(expectedHtml, actualHtml);
         }
