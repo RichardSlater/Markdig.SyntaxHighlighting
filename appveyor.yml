@@ -14,7 +14,7 @@ assembly_info:
 
 # restore NuGet packages before running MSBuild
 before_build:
-  - nuget restore
+  - nuget restore src\Markdig.SyntaxHighlighting.sln
 
 cache:
   - packages -> **\packages.config  # preserve "packages" directory
