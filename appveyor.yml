@@ -4,39 +4,42 @@
       - master
 
   version: 1.0.{build}
+
+-
+  version: 1.0.{build}-{branch}
+
+# build configurations
+  configuration: Release
+
+  # enable AssemblyInfo.cs patching with build version number
+  assembly_info:
+    patch: true
+    file: AssemblyInfo.*
+    assembly_version: "{version}"
+    assembly_file_version: "{version}"
+    assembly_informational_version: "{version}"
+
+  # restore NuGet packages before running MSBuild
+  before_build:
+    - nuget restore src\Markdig.SyntaxHighlighting.sln
+
+  cache:
+    - packages -> **\packages.config  # preserve "packages" directory
+    - '%LocalAppData%\NuGet\Cache'    # NuGet < v3
+    - '%LocalAppData%\NuGet\v3-cache' # NuGet v3
+
+  build:
+    # enable MSBuild parallel builds
+    parallel: true
+    project: src\Markdig.SyntaxHighlighting.sln
+    publish_nuget: true
+    publish_nuget_symbols: true
+
   deploy:
-    provider: NuGet
+    - provider: NuGet
+      on:
+        branch: master
       api_key:
         secure: V5o2cN5k44AUj5QCNS3Cw9dUgH7sp7Enuo9XXslpS+qxLoYh0CIwSHoR5dQB4TFY
       skip_symbols: false
       artifact: src/Markdig.SyntaxHighlighting/Markdig.SyntaxHighlighting.nupkg
-
-# version number
-version: 1.0.{build}-{branch}
-
-# build configurations
-configuration: Release
-
-# enable AssemblyInfo.cs patching with build version number
-assembly_info:
-  patch: true
-  file: AssemblyInfo.*
-  assembly_version: "{version}"
-  assembly_file_version: "{version}"
-  assembly_informational_version: "{version}"
-
-# restore NuGet packages before running MSBuild
-before_build:
-  - nuget restore src\Markdig.SyntaxHighlighting.sln
-
-cache:
-  - packages -> **\packages.config  # preserve "packages" directory
-  - '%LocalAppData%\NuGet\Cache'    # NuGet < v3
-  - '%LocalAppData%\NuGet\v3-cache' # NuGet v3
-
-build:
-  # enable MSBuild parallel builds
-  parallel: true
-  project: src\Markdig.SyntaxHighlighting.sln
-  publish_nuget: true
-  publish_nuget_symbols: true
