@@ -13,7 +13,7 @@
       api_key:
         secure: V5o2cN5k44AUj5QCNS3Cw9dUgH7sp7Enuo9XXslpS+qxLoYh0CIwSHoR5dQB4TFY
       skip_symbols: false
-      artifact: "src/Markdig.SyntaxHighlighting/Markdig.SyntaxHighlighting.*.nupkg"
+      artifact: "Markdig.SyntaxHighlighting.*.nupkg"
 
   # enable AssemblyInfo.cs patching with build version number
   assembly_info:
