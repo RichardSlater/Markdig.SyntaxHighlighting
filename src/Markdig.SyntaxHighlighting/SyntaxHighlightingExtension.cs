@@ -6,7 +6,7 @@ namespace Markdig.SyntaxHighlighting {
     public class SyntaxHighlightingExtension : IMarkdownExtension {
         public void Setup(MarkdownPipelineBuilder pipeline) {}
 
-        public void Setup(IMarkdownRenderer renderer) {
+        public void Setup(MarkdownPipeline pipeline, IMarkdownRenderer renderer) {
             if (renderer == null) {
                 throw new ArgumentNullException(nameof(renderer));
             }
