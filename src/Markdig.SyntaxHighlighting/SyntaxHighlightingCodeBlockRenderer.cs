@@ -52,6 +52,11 @@ namespace Markdig.SyntaxHighlighting {
         private static string ApplySyntaxHighlighting(string languageMoniker, string firstLine, string code) {
             var languageTypeAdapter = new LanguageTypeAdapter();
             var language = languageTypeAdapter.Parse(languageMoniker, firstLine);
+
+            if (language == null) { //handle unrecognised language formats, e.g. when using mermaid diagrams
+                return code;
+            }
+
             var codeBuilder = new StringBuilder();
             var codeWriter = new StringWriter(codeBuilder);
             var styleSheet = StyleSheets.Default;
