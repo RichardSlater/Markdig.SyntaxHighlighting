@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("debug")]
 [assembly: AssemblyCompany("Amido Limited")]
 [assembly: AssemblyProduct("Markdig.SyntaxHighlighting")]
-[assembly: AssemblyCopyright("Â©2016 Amido Limited, All Rights Reserved")]
+[assembly: AssemblyCopyright("©2017 Amido Limited, All Rights Reserved")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,6 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.0.1.0")]
+[assembly: AssemblyInformationalVersion("0.0.1")]
+[assembly: AssemblyFileVersion("0.0.1.0")]
