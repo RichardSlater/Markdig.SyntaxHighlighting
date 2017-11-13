@@ -78,9 +78,11 @@ namespace Markdig.SyntaxHighlighting {
 
                 if (firstLine == null) {
                     firstLine = lineText;
+                } else {
+                    code.AppendLine();
                 }
 
-                code.AppendLine(lineText);
+                code.Append(lineText);
             }
             return code.ToString();
         }
