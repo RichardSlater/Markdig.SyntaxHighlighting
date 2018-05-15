@@ -1,9 +1,17 @@
 ﻿using System;
+using ColorCode;
 using Markdig.Renderers;
 using Markdig.Renderers.Html;
 
 namespace Markdig.SyntaxHighlighting {
     public class SyntaxHighlightingExtension : IMarkdownExtension {
+        private readonly IStyleSheet _customCss;
+
+        public SyntaxHighlightingExtension(IStyleSheet customCss = null)
+        {
+            _customCss = customCss;
+        }
+
         public void Setup(MarkdownPipelineBuilder pipeline) {}
 
         public void Setup(MarkdownPipeline pipeline, IMarkdownRenderer renderer) {
@@ -22,7 +30,7 @@ namespace Markdig.SyntaxHighlighting {
             }
 
             htmlRenderer.ObjectRenderers.AddIfNotAlready(
-                new SyntaxHighlightingCodeBlockRenderer(originalCodeBlockRenderer));
+                new SyntaxHighlightingCodeBlockRenderer(originalCodeBlockRenderer, _customCss));
         }
     }
 }

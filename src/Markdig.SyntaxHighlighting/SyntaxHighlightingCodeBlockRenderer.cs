@@ -9,9 +9,11 @@ using Markdig.Syntax;
 namespace Markdig.SyntaxHighlighting {
     public class SyntaxHighlightingCodeBlockRenderer : HtmlObjectRenderer<CodeBlock> {
         private readonly CodeBlockRenderer _underlyingRenderer;
+        private readonly IStyleSheet _customCss;
 
-        public SyntaxHighlightingCodeBlockRenderer(CodeBlockRenderer underlyingRenderer = null) {
+        public SyntaxHighlightingCodeBlockRenderer(CodeBlockRenderer underlyingRenderer = null, IStyleSheet customCss = null) {
             _underlyingRenderer = underlyingRenderer ?? new CodeBlockRenderer();
+            _customCss = customCss;
         }
 
         protected override void Write(HtmlRenderer renderer, CodeBlock obj) {
@@ -49,7 +51,7 @@ namespace Markdig.SyntaxHighlighting {
             renderer.WriteLine("</div>");
         }
 
-        private static string ApplySyntaxHighlighting(string languageMoniker, string firstLine, string code) {
+        private string ApplySyntaxHighlighting(string languageMoniker, string firstLine, string code) {
             var languageTypeAdapter = new LanguageTypeAdapter();
             var language = languageTypeAdapter.Parse(languageMoniker, firstLine);
 
@@ -59,7 +61,7 @@ namespace Markdig.SyntaxHighlighting {
 
             var codeBuilder = new StringBuilder();
             var codeWriter = new StringWriter(codeBuilder);
-            var styleSheet = StyleSheets.Default;
+            var styleSheet = _customCss ?? StyleSheets.Default;
             var colourizer = new CodeColorizer();
             colourizer.Colorize(code, language, Formatters.Default, styleSheet, codeWriter);
             return codeBuilder.ToString();
