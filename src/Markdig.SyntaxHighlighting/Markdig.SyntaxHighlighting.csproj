@@ -4,4 +4,9 @@
     <TargetFramework>netstandard1.6</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="ColorCode.Netstandard" Version="1.0.4.3" />
+    <PackageReference Include="Markdig" Version="0.15.3" />
+  </ItemGroup>
+
 </Project>
