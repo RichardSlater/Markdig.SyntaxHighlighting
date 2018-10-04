@@ -7,8 +7,9 @@ namespace Markdig.SyntaxHighlighting.Tests.Example {
     public class CodeSample {
         [Fact]
         public void CodeSampleWorks() {
-            var codebase = Assembly.GetExecutingAssembly().GetName().CodeBase;
-            var directory = Path.GetDirectoryName(codebase);
+
+            var location = GetType().GetTypeInfo().Assembly.Location;
+            var directory = Path.GetDirectoryName(location);
             if (directory == null) {
                 throw new NullReferenceException("appPath came back null.");
             }
