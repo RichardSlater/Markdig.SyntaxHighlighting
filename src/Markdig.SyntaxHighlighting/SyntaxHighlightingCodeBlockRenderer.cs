@@ -52,11 +52,20 @@ namespace Markdig.SyntaxHighlighting {
         }
 
         private string ApplySyntaxHighlighting(string languageMoniker, string firstLine, string code) {
+            return ApplySyntaxHighlighting(languageMoniker, firstLine, code, true);
+        }
+
+        private string ApplySyntaxHighlighting(string languageMoniker, string firstLine, string code, bool useDefault)
+        {
             var languageTypeAdapter = new LanguageTypeAdapter();
             var language = languageTypeAdapter.Parse(languageMoniker, firstLine);
 
-            if (language == null) { //handle unrecognised language formats, e.g. when using mermaid diagrams
-                return code;
+            if (language == null)
+            { //handle unrecognised language formats, e.g. when using mermaid diagrams
+                if (useDefault)
+                    language = FakeIt();
+                else
+                    return code;
             }
 
             var codeBuilder = new StringBuilder();
@@ -65,6 +74,41 @@ namespace Markdig.SyntaxHighlighting {
             var colourizer = new CodeColorizer();
             colourizer.Colorize(code, language, Formatters.Default, styleSheet, codeWriter);
             return codeBuilder.ToString();
+        }
+
+        private ColorCode.ILanguage FakeIt()
+        {
+            return new fakeLan();
+        }
+
+        class fakeLan : ColorCode.ILanguage
+        {
+            public string Id => "default";
+            public string FirstLinePattern => "^.*$";
+            public string Name => "default";
+            public IList<LanguageRule> Rules
+            {
+                get
+                {
+                    return new List<LanguageRule> {
+                        new LanguageRule(".?", new Dictionary<int, string>{ {0,null } })
+                    };
+                }
+            }
+            public string CssClassName => "default";
+            public bool HasAlias(string lang)
+            {
+                switch (lang.ToLower())
+                {
+                    case "text":
+                    case "txt":
+                    case "csv":
+                        return true;
+
+                    default:
+                        return false;
+                }
+            }
         }
 
         private static string GetCode(LeafBlock obj, out string firstLine) {
