@@ -8,7 +8,7 @@ using Markdig.Syntax;
 using Moq;
 using Xunit;
 
-namespace Markdig.SyntaxHighlighting.Tests {
+namespace MarkdownServer.Markdig.SyntaxHighlighting.Tests {
     public class SyntaxHighlightingCodeBlockRendererTests {
         public string scriptBlock = @"```csharp
 var desktop = Environment.SpecialFolder.DesktopDirectory;

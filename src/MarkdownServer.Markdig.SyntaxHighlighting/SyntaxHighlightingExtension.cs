@@ -1,9 +1,10 @@
 ﻿using System;
-using ColorCode;
+using MarkdownServer.ColorCode;
 using Markdig.Renderers;
 using Markdig.Renderers.Html;
+using Markdig;
 
-namespace Markdig.SyntaxHighlighting {
+namespace MarkdownServer.Markdig.SyntaxHighlighting {
     public class SyntaxHighlightingExtension : IMarkdownExtension {
         private readonly IStyleSheet _customCss;
 

@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\ColorCodePortable\ColorCode\MarkdownServer.ColorCodePortable.csproj" />
+    <ProjectReference Include="..\..\..\ColorCodePortable\MarkdownServer.ColorCodePortable\MarkdownServer.ColorCodePortable.csproj" />
   </ItemGroup>
 
 </Project>

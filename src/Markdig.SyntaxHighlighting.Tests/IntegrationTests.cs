@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Markdig.SyntaxHighlighting.Tests
+namespace MarkdownServer.Markdig.SyntaxHighlighting.Tests
 {
     public class IntegrationTests
     {

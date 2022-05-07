@@ -4,7 +4,7 @@ using Markdig.Renderers;
 using Markdig.Renderers.Html;
 using Xunit;
 
-namespace Markdig.SyntaxHighlighting.Tests {
+namespace MarkdownServer.Markdig.SyntaxHighlighting.Tests {
     public class SyntaxHighlightingExtensionsTests {
         private class FakeRenderer : TextRendererBase<FakeRenderer> {
             public FakeRenderer(TextWriter writer) : base(writer) {}
