@@ -6,7 +6,12 @@
     <LangVersion>10</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IncludeSource>True</IncludeSource>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>MarkdownServer.Markdig.SyntaxHighlighting</PackageId>
+    <PackageLicenseUrl>https://github.com/MarkdownServer/Markdig.SyntaxHighlighting/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/MarkdownServer/Markdig.SyntaxHighlighting</PackageProjectUrl>
+    <PackageIconUrl>https://cdn.rawgit.com/MarkdownServer/Markdig.SyntaxHighlighting/56be978d313c4199396ca1ac0b1407d2c1cb7dfa/assets/icon.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
