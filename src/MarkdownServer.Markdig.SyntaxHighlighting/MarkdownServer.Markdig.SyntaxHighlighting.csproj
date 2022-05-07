@@ -9,9 +9,11 @@
     <IncludeSource>True</IncludeSource>
     <IncludeSymbols>True</IncludeSymbols>
     <PackageId>MarkdownServer.Markdig.SyntaxHighlighting</PackageId>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <PackageLicenseUrl>https://github.com/MarkdownServer/Markdig.SyntaxHighlighting/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/MarkdownServer/Markdig.SyntaxHighlighting</PackageProjectUrl>
     <PackageIconUrl>https://cdn.rawgit.com/MarkdownServer/Markdig.SyntaxHighlighting/56be978d313c4199396ca1ac0b1407d2c1cb7dfa/assets/icon.png</PackageIconUrl>
+    <IsPackable>True</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
     <PackageReference Include="GitVersion.MsBuild" Version="5.10.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
