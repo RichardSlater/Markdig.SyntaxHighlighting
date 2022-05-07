@@ -15,7 +15,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <Compile Remove="Properties\**" />
+    <EmbeddedResource Remove="Properties\**" />
+    <None Remove="Properties\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\ColorCodePortable\ColorCode\ColorCode.csproj" />
+    <ProjectReference Include="..\..\..\ColorCodePortable\ColorCode\MarkdownServer.ColorCodePortable.csproj" />
   </ItemGroup>
 
 </Project>

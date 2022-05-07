@@ -53,7 +53,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Markdig.SyntaxHighlighting\Markdig.SyntaxHighlighting.csproj" />
+    <ProjectReference Include="..\Markdig.SyntaxHighlighting\MarkdownServer.Markdig.SyntaxHighlighting.csproj" />
   </ItemGroup>
 
   <ItemGroup>
