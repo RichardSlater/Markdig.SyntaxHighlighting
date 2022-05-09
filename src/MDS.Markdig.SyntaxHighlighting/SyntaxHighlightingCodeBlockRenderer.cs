@@ -5,8 +5,10 @@ using Markdig.Parsers;
 using Markdig.Renderers;
 using Markdig.Renderers.Html;
 using Markdig.Syntax;
+using MDS.ColorCodePortable;
 
-namespace MDS.Markdig.SyntaxHighlighting {
+namespace MDS.Markdig.SyntaxHighlighting
+{
     public class SyntaxHighlightingCodeBlockRenderer : HtmlObjectRenderer<CodeBlock> {
         private readonly CodeBlockRenderer _underlyingRenderer;
         private readonly IStyleSheet _customCss;
