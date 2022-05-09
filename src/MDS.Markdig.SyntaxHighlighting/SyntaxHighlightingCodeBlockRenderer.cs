@@ -1,12 +1,12 @@
 ﻿using System.IO;
 using System.Text;
-using MarkdownServer.ColorCode;
+using MDS.ColorCode;
 using Markdig.Parsers;
 using Markdig.Renderers;
 using Markdig.Renderers.Html;
 using Markdig.Syntax;
 
-namespace MarkdownServer.Markdig.SyntaxHighlighting {
+namespace MDS.Markdig.SyntaxHighlighting {
     public class SyntaxHighlightingCodeBlockRenderer : HtmlObjectRenderer<CodeBlock> {
         private readonly CodeBlockRenderer _underlyingRenderer;
         private readonly IStyleSheet _customCss;

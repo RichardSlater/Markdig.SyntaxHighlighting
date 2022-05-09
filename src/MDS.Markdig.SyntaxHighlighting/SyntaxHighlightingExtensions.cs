@@ -1,7 +1,7 @@
 ﻿using Markdig;
-using MarkdownServer.ColorCode;
+using MDS.ColorCode;
 
-namespace MarkdownServer.Markdig.SyntaxHighlighting {
+namespace MDS.Markdig.SyntaxHighlighting {
     public static class SyntaxHighlightingExtensions {
         public static MarkdownPipelineBuilder UseSyntaxHighlighting(this MarkdownPipelineBuilder pipeline, IStyleSheet customCss = null)
         {

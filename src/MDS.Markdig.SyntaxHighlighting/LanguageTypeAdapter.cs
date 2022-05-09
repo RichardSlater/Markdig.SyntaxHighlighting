@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using MarkdownServer.ColorCode;
+using MDS.ColorCode;
 
-namespace MarkdownServer.Markdig.SyntaxHighlighting {
+namespace MDS.Markdig.SyntaxHighlighting {
     public class LanguageTypeAdapter {
         private readonly Dictionary<string, ILanguage> languageMap = new Dictionary<string, ILanguage> {
             {"csharp", Languages.CSharp},

@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace MarkdownServer.Markdig.SyntaxHighlighting.Tests;
+namespace MDS.Markdig.SyntaxHighlighting.Tests;
 
 public class UnitTest1
 {

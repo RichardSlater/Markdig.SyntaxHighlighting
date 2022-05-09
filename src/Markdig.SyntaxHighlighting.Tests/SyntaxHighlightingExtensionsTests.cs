@@ -1,10 +1,12 @@
 ﻿using System;
 using System.IO;
+
+using Markdig;
 using Markdig.Renderers;
 using Markdig.Renderers.Html;
 using Xunit;
 
-namespace MarkdownServer.Markdig.SyntaxHighlighting.Tests {
+namespace MDS.Markdig.SyntaxHighlighting.Tests {
     public class SyntaxHighlightingExtensionsTests {
         private class FakeRenderer : TextRendererBase<FakeRenderer> {
             public FakeRenderer(TextWriter writer) : base(writer) {}
@@ -17,14 +19,11 @@ namespace MarkdownServer.Markdig.SyntaxHighlighting.Tests {
             var markdownRenderer = new HtmlRenderer(writer);
 
             var oldRendererCount = markdownRenderer.ObjectRenderers.Count;
-            Assert.Equal(1,
-                markdownRenderer.ObjectRenderers.FindAll(x => x.GetType() == typeof(CodeBlockRenderer)).Count);
+            Assert.Single(markdownRenderer.ObjectRenderers.FindAll(x => x.GetType() == typeof(CodeBlockRenderer)));
             extension.Setup(null, markdownRenderer);
-            Assert.Equal(0,
-                markdownRenderer.ObjectRenderers.FindAll(x => x.GetType() == typeof(CodeBlockRenderer)).Count);
-            Assert.Equal(1,
-                markdownRenderer.ObjectRenderers.FindAll(x => x.GetType() == typeof(SyntaxHighlightingCodeBlockRenderer))
-                    .Count);
+            Assert.Empty(markdownRenderer.ObjectRenderers.FindAll(x => x.GetType() == typeof(CodeBlockRenderer)));
+            Assert.Single(markdownRenderer.ObjectRenderers.FindAll(x => x.GetType() == typeof(SyntaxHighlightingCodeBlockRenderer))
+);
             Assert.Equal(oldRendererCount, markdownRenderer.ObjectRenderers.Count);
         }
 
