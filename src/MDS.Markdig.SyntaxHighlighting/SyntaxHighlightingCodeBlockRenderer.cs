@@ -1,11 +1,9 @@
-﻿using System.IO;
-using System.Text;
+﻿using System.Text;
 using MDS.ColorCode;
 using Markdig.Parsers;
 using Markdig.Renderers;
 using Markdig.Renderers.Html;
 using Markdig.Syntax;
-using MDS.ColorCodePortable;
 
 namespace MDS.Markdig.SyntaxHighlighting
 {
