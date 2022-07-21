@@ -4,7 +4,6 @@ using Markdig.Parsers;
 using Markdig.Renderers;
 using Markdig.Renderers.Html;
 using Markdig.Syntax;
-using MDS.ColorCode;
 
 namespace MDS.Markdig.SyntaxHighlighting
 {

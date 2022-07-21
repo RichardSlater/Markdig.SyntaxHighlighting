@@ -6,9 +6,10 @@ using MDS.ColorCode;
 namespace MDS.Markdig.SyntaxHighlighting
 {
     public class LanguageTypeAdapter {
-        private readonly Dictionary<string, ILanguage> languageMap = new Dictionary<string, ILanguage> {
+        private readonly Dictionary<string, ILanguage> languageMap = new()
+        {
             {"csharp", Languages.CSharp},
-            {"cplusplus", Languages.Cpp}
+            {"cplusplus", Languages.Cpp},
         };
 
         public ILanguage Parse(string id, string firstLine = null) {

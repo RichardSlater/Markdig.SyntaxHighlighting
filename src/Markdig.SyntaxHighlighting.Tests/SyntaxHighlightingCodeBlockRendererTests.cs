@@ -14,16 +14,15 @@ namespace MDS.Markdig.SyntaxHighlighting.Tests {
 var desktop = Environment.SpecialFolder.DesktopDirectory;
 ```";
 
-        private static FencedCodeBlock GetFencedCodeBlock(string language = "language-csharp") {
-            return new FencedCodeBlock(new FencedCodeBlockParser()) {
+        private static FencedCodeBlock GetFencedCodeBlock(string language = "language-csharp")
+            => new(new FencedCodeBlockParser()) {
                 Info = language,
-                Lines = new StringLineGroup(3) {
-                    new StringSlice("```csharp"),
-                    new StringSlice("var desktop = Environment.SpecialFolder.DesktopDirectory;"),
-                    new StringSlice("```")
-                }
+                Lines = new(3) {
+                    new("```csharp"),
+                    new("var desktop = Environment.SpecialFolder.DesktopDirectory;"),
+                    new("```"),
+                },
             };
-        }
 
         [Fact]
         public void ConstructorDoesNotThrow() {

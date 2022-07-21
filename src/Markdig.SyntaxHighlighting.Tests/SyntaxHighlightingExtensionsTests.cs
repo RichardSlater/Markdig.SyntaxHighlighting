@@ -30,7 +30,7 @@ namespace MDS.Markdig.SyntaxHighlighting.Tests {
         [Fact]
         public void DoesntThrowWhenSetupPipeline() {
             var extension = new SyntaxHighlightingExtension();
-            extension.Setup(new MarkdownPipelineBuilder());
+            extension.Setup(new());
         }
 
         [Fact]
@@ -40,7 +40,7 @@ namespace MDS.Markdig.SyntaxHighlighting.Tests {
             var markdownRenderer = new HtmlRenderer(writer);
             markdownRenderer.ObjectRenderers.RemoveAll(x => true);
             extension.Setup(null, markdownRenderer);
-            Assert.Equal(1, markdownRenderer.ObjectRenderers.Count);
+            Assert.Single(markdownRenderer.ObjectRenderers);
         }
 
         [Fact]

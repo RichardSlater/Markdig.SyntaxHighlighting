@@ -10,9 +10,7 @@ namespace MDS.Markdig.SyntaxHighlighting
         private readonly IStyleSheet _customCss;
 
         public SyntaxHighlightingExtension(IStyleSheet customCss = null)
-        {
-            _customCss = customCss;
-        }
+            => _customCss = customCss;
 
         public void Setup(MarkdownPipelineBuilder pipeline) {}
 
