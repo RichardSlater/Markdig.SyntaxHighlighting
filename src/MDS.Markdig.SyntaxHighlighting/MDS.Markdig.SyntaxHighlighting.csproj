@@ -9,13 +9,13 @@
     <Nullable>disable</Nullable>
     <IncludeSource>True</IncludeSource>
     <IncludeSymbols>True</IncludeSymbols>
-    <PackageId>MDS.Markdig.SyntaxHighlighting</PackageId>
+    <PackageId>MarkdownServer.Markdig.SyntaxHighlighting</PackageId>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <PackageProjectUrl>https://github.com/MarkdownServer/Markdig.SyntaxHighlighting</PackageProjectUrl>
     <PackageIconUrl>https://cdn.rawgit.com/MarkdownServer/Markdig.SyntaxHighlighting/56be978d313c4199396ca1ac0b1407d2c1cb7dfa/assets/icon.png</PackageIconUrl>
     <IsPackable>True</IsPackable>
     <RootNamespace>MDS.Markdig.SyntaxHighlighting</RootNamespace>
-    <Title>MDS.Markdig.SyntaxHighlighting</Title>
+    <Title>MarkdownServer.Markdig.SyntaxHighlighting</Title>
     <Authors>@sharpninja &lt;ninja@thesharp.ninja&gt;</Authors>
     <RepositoryUrl>https://github.com/MarkdownServer/Markdig.SyntaxHighlighting</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
