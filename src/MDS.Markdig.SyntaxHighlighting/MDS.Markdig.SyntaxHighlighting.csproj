@@ -16,6 +16,10 @@
     <PackageIconUrl>https://cdn.rawgit.com/MarkdownServer/Markdig.SyntaxHighlighting/56be978d313c4199396ca1ac0b1407d2c1cb7dfa/assets/icon.png</PackageIconUrl>
     <IsPackable>True</IsPackable>
     <RootNamespace>MDS.Markdig.SyntaxHighlighting</RootNamespace>
+    <Title>MDS.Markdig.SyntaxHighlighting</Title>
+    <Authors>@sharpninja &lt;ninja@thesharp.ninja&gt;</Authors>
+    <RepositoryUrl>https://github.com/MarkdownServer/Markdig.SyntaxHighlighting</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
