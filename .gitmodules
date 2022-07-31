@@ -1,0 +1,3 @@
+[submodule "Markdig.SyntaxHighlighting"]
+	path = Markdig.SyntaxHighlighting
+	url = https://github.com/MarkdownServer/Markdig.SyntaxHighlighting

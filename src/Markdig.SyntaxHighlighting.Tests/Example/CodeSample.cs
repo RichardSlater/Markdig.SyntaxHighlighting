@@ -3,7 +3,7 @@ using System.IO;
 using System.Reflection;
 using Xunit;
 
-namespace Markdig.SyntaxHighlighting.Tests.Example {
+namespace MDS.Markdig.SyntaxHighlighting.Tests.Example {
     public class CodeSample {
         [Fact]
         public void CodeSampleWorks() {
