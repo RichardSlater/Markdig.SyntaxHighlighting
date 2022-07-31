@@ -11,7 +11,6 @@
     <IncludeSymbols>True</IncludeSymbols>
     <PackageId>MDS.Markdig.SyntaxHighlighting</PackageId>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <PackageLicenseUrl>https://github.com/MarkdownServer/Markdig.SyntaxHighlighting/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/MarkdownServer/Markdig.SyntaxHighlighting</PackageProjectUrl>
     <PackageIconUrl>https://cdn.rawgit.com/MarkdownServer/Markdig.SyntaxHighlighting/56be978d313c4199396ca1ac0b1407d2c1cb7dfa/assets/icon.png</PackageIconUrl>
     <IsPackable>True</IsPackable>
@@ -20,12 +19,30 @@
     <Authors>@sharpninja &lt;ninja@thesharp.ninja&gt;</Authors>
     <RepositoryUrl>https://github.com/MarkdownServer/Markdig.SyntaxHighlighting</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PackageIcon>93015012.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="Properties\**" />
     <EmbeddedResource Remove="Properties\**" />
     <None Remove="Properties\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\93015012.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
