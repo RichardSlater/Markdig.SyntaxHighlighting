@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0</TargetFrameworks>
+<!--    <RuntimeIdentifiers>linux-x64;win-x64</RuntimeIdentifiers>-->
+    <Platforms>x64</Platforms>
+    <LangVersion>10</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <IncludeSource>True</IncludeSource>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>MarkdownServer.Markdig.SyntaxHighlighting</PackageId>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageProjectUrl>https://github.com/MarkdownServer/Markdig.SyntaxHighlighting</PackageProjectUrl>
+    <PackageIconUrl>https://cdn.rawgit.com/MarkdownServer/Markdig.SyntaxHighlighting/56be978d313c4199396ca1ac0b1407d2c1cb7dfa/assets/icon.png</PackageIconUrl>
+    <IsPackable>True</IsPackable>
+    <RootNamespace>MDS.Markdig.SyntaxHighlighting</RootNamespace>
+    <Title>MarkdownServer.Markdig.SyntaxHighlighting</Title>
+    <Authors>@sharpninja &lt;ninja@thesharp.ninja&gt;</Authors>
+    <RepositoryUrl>https://github.com/MarkdownServer/Markdig.SyntaxHighlighting</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageIcon>93015012.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\**" />
+    <EmbeddedResource Remove="Properties\**" />
+    <None Remove="Properties\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\93015012.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />-->
+    <PackageReference Include="GitVersion.MsBuild" Version="5.10.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Markdig" Version="0.30.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ColorCodePortable\MDS.ColorCodePortable\MDS.ColorCodePortable.csproj" />
+  </ItemGroup>
+
+</Project>

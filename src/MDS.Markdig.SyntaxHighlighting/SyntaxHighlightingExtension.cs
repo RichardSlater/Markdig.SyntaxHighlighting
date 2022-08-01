@@ -1,16 +1,16 @@
 ﻿using System;
-using ColorCode;
 using Markdig.Renderers;
 using Markdig.Renderers.Html;
+using Markdig;
+using MDS.ColorCode;
 
-namespace Markdig.SyntaxHighlighting {
+namespace MDS.Markdig.SyntaxHighlighting
+{
     public class SyntaxHighlightingExtension : IMarkdownExtension {
         private readonly IStyleSheet _customCss;
 
         public SyntaxHighlightingExtension(IStyleSheet customCss = null)
-        {
-            _customCss = customCss;
-        }
+            => _customCss = customCss;
 
         public void Setup(MarkdownPipelineBuilder pipeline) {}
 

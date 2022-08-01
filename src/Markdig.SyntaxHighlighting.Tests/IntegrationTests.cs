@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Markdig;
+
+using System;
+
 using Xunit;
 
-namespace Markdig.SyntaxHighlighting.Tests
+namespace MDS.Markdig.SyntaxHighlighting.Tests
 {
     public class IntegrationTests
     {
@@ -25,9 +24,9 @@ namespace Markdig.SyntaxHighlighting.Tests
                 .UseSyntaxHighlighting()
                 .Build();
             var html = Markdown.ToHtml(testString, pipeline);
-            Assert.True(html.Contains("<pre><code>"));
-            Assert.True(html.Contains("jsonProperty"));
-            Assert.False(html.Contains("lang-"));
+            Assert.Contains("<pre><code>", html);
+            Assert.Contains("jsonProperty", html);
+            Assert.DoesNotContain("lang-", html);
         }
 
         [Fact]
@@ -46,9 +45,9 @@ namespace Markdig.SyntaxHighlighting.Tests
                 .UseSyntaxHighlighting()
                 .Build();
             var html = Markdown.ToHtml(testString, pipeline);
-            Assert.True(html.Contains("<div"));
-            Assert.True(html.Contains("jsonProperty"));
-            Assert.True(html.Contains("lang-"));
+            Assert.Contains("<div", html);
+            Assert.Contains("jsonProperty", html);
+            Assert.Contains("lang-", html);
         }
 
     }
